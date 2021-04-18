@@ -1,4 +1,5 @@
 # binary search in the list of numbers
+# make sure you have file nubers.txt in the folder, where the program is
 import time
 l = []
 
