@@ -67,4 +67,4 @@ print("--- %s ,seconds ---" % (time.time() - start_time), 'Time needed for the i
 
 start_time = time.time()
 print(recursive_search(number,l, 0), 'Recursive method answer ')
-print("--- %s milliseconds ---" % (time.time() - start_time), 'Time needed for the recursive method ')
+print("--- %s ,seconds ---" % (time.time() - start_time), 'Time needed for the recursive method ')
