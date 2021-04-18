@@ -13,7 +13,9 @@ def iterative_search(n, l):
     first_half = 0
     second_half = len(l)
     search_space = (first_half + second_half) // 2
-    while l[search_space] != n and first_half < second_half:
+    while l[search_space] != n:
+        if first_half > second_half:
+            return None
         if n > l[search_space]:
             first_half = search_space + 1
             search_space = (first_half + second_half) // 2
@@ -31,6 +33,8 @@ def recursive_search(n, l, d):
     :param d: special parameter needed to find index, can`t explain better, further understanding can be founded by looking through the code
     :return:
     '''
+    if len(l) == 1 and l[0] != n:
+        return None
     first_half = -1
     second_half = len(l)
     search_space = (first_half + second_half) // 2
@@ -57,10 +61,10 @@ if option == 2:
 
 
 start_time = time.time()
-print(iterative_search(number,l), 'Time needed for the iterative method')
-print("--- %s ,seconds ---" % (time.time() - start_time), 'Iterative method answer')
+print(iterative_search(number,l), 'Iterative method answer')
+print("--- %s ,seconds ---" % (time.time() - start_time), 'Time needed for the iterative method')
 
 
 start_time = time.time()
-print(recursive_search(number,l, 0), 'Time needed for the recursive method ')
-print("--- %s milliseconds ---" % (time.time() - start_time), 'Recursive method answer')
+print(recursive_search(number,l, 0), 'Recursive method answer ')
+print("--- %s milliseconds ---" % (time.time() - start_time), 'Time needed for the recursive method ')
